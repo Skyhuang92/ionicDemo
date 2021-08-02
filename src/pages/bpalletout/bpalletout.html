@@ -1,0 +1,52 @@
+﻿<ion-header>
+  <ion-navbar>
+    <ion-title>空托盘出库</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="BpalletOut">
+    <ion-item>
+      <ion-label>站台号：</ion-label>
+      <ion-input clearInput="true" type="text" placeholder="请输入站台编号 " (keyup.enter)="focusInputp(locNo)"  #locNo> </ion-input>
+    </ion-item>
+  </div>
+  
+  <div class="pallet">
+    <table width="100%" border="1" cellpadding="2" align="center">
+      <thead>
+        <tr>
+          <th width="100" colspan="2">任务信息</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <tr>
+          <th>任务号：</th>
+          <td>{{taskNo}}</td>
+        </tr>
+        <tr>
+          <th>托盘号：</th>
+          <td>{{palletNo}}</td>
+        </tr>
+        <tr>
+          <th>库位号：</th>
+          <td>{{bin_No}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</ion-content>   
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="fourthDiv">
+      <button ion-button style="width:48%;float:left;text-align:center" color="reds" (click)="clearButtonClick(locNo)">
+        清空
+      </button>
+      <button ion-button style="width:48%;float:left;text-align:center" icon-start (click)="bpalletOutButtonClick(locNo)">
+        出库
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

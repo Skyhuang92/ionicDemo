@@ -1,0 +1,24 @@
+page-home {
+  .categories {
+    .title {
+      font-family: "黑体-简";
+      font-weight: 500;
+      color: #343b34;
+      font-size: 90%;
+      display: block;
+      margin-top: 10px;
+    }
+    ion-row {
+      padding: 20px;
+    }
+    ion-col {
+      padding: 20px;
+    }
+  }
+  .icon {
+    border-radius: 100px;
+    color: rgba(214, 40, 40, 0.678); // background-color: #11111160;
+    font-size: 36px !important;
+    padding: 5px;
+  }
+}

@@ -1,0 +1,20 @@
+page-storage-out-list {
+  .firstDiv {
+    margin-top: 0px;
+  } 
+  .thirdDiv tbody tr {
+    height: 100px;
+  }
+  .thirdDiv thead tr {
+    height: 40px; // width: 30px;
+    background: rgba(104, 194, 96, 0.411);
+  }
+  .thirdDiv tbody tr th {
+    width: 90px;
+    background: rgba(204, 201, 201, 0.411);
+  }
+  .fourthDiv {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

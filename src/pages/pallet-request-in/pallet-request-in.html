@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>生产入库</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="PalletInput">
+    <ion-item>
+      <ion-label>生产站台：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="站台编号扫描" text-right  #locNo></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>物料类型：</ion-label>
+      <ion-select okText="确定" cancelText="取消" placeholder="物料类型" [(ngModel)]="materType" (ionChange)="MaterTypeChange(materNo)">   
+        <ion-option *ngFor="let materType of materTypeNameArr">{{materType}}</ion-option>
+      </ion-select>
+    </ion-item> 
+    <ion-item>
+      <ion-label>托盘类型：</ion-label>
+      <ion-select okText="确定" cancelText="取消" placeholder="托盘类型" [(ngModel)]="palletType">   
+        <ion-option *ngFor="let palletType of palletTypeNameArr">{{palletType}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>托盘编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="托盘编号录入" text-right  #palletNo></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>物料编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="物料编码录入" text-right   (ionChange)="OnChange(materNo)" #materNo></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>物料名称：</ion-label>
+      <ion-label style="background:transparent;border:1px solid #ffffff" type="text"  text-right >{{MaterName}}</ion-label>
+    </ion-item> 
+    <ion-item>
+      <ion-label>物料数量：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="入库物料数量" text-right   #materQty></ion-input>
+    </ion-item>      
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="PalletButton">
+      <button ion-button mode="ios" color="reds" outline="false" ion-icon name="home" 
+      style="width:48%;text-align:center" 
+      (click)="letEmpty(locNo,palletNo,materNo,materQty)">清空</button>
+      <button ion-button icon-start style="width:48%;text-align:center" 
+      (click)="bounding(locNo,palletNo,materNo,materQty)">入库</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

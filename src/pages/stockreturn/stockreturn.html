@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>托盘入库</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="PalletInput">
+      <ion-item no-border>
+          <label>托盘编号：</label>
+          <input style="background:transparent;border:1px solid #ffffff" type="text" 
+          placeholder="            请扫描托盘编码" (keyup.enter)="focusInputp(PalletNo)"
+            #PalletNo/>
+        </ion-item>
+    <ion-item no-border>
+      <label>托盘数量：</label>
+      <input style="background:transparent;border:1px solid #ffffff" type="text" 
+      placeholder="            请输入托盘数量" (change)="focusInputi(PalletQty)"
+        #PalletQty/>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="PalletButton">
+      <button ion-button mode="ios" color="reds" outline="false" ion-icon name="home" style="width:48%;text-align:center" 
+      (click)="letEmpty(PalletNo,PalletQty)">清空</button>
+      <button ion-button icon-start style="width:48%;text-align:center" 
+      (click)="bounding(PalletNo,PalletQty)"> 绑定</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

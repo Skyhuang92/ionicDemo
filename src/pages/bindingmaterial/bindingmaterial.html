@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>物料绑定</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="PalletInput">
+    <ion-item>
+      <ion-label>物料类型：</ion-label>
+      <ion-select okText="确定" cancelText="取消" placeholder="物料类型" [(ngModel)]="materTypeName" (ionChange)="MaterTypeChange()">   
+        <ion-option *ngFor="let materTypeName of materTypeNameArr">{{materTypeName}}</ion-option>
+      </ion-select>
+    </ion-item> 
+    <ion-item>
+      <ion-label>托盘类型：</ion-label>
+      <ion-select okText="确定" cancelText="取消" placeholder="托盘类型" [(ngModel)]="palletType">   
+        <ion-option *ngFor="let palletType of palletTypeNameArr">{{palletType}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>托盘编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="托盘编号录入" (ionChange)="PalletNoChange(palletNo)" text-right  #palletNo></ion-input>
+    </ion-item>
+    <ion-item id="itemMaterNo">
+      <ion-label>物料编号：</ion-label>
+      <ion-select okText="确定" cancelText="取消" placeholder="物料编码" [(ngModel)]="materNo" (ionChange)="MaterNoChange()">   
+        <ion-option *ngFor="let materNo of materNoArr">{{materNo}}</ion-option>
+      </ion-select>   
+    </ion-item>
+    <ion-item>
+      <ion-label>物料名称：</ion-label>
+      <ion-label style="background:transparent;border:1px solid #ffffff" type="text"  text-right >{{materName}}</ion-label>
+    </ion-item> 
+    <ion-item id="itemLineNo">
+      <ion-label>车台编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="车台编号" text-right   #lineNo></ion-input>
+    </ion-item>  
+    <ion-item id="itemRackNo">
+      <ion-label>架次编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="架次编号" text-right   #rackNo></ion-input>
+    </ion-item>
+    <ion-item id="itemShiftNo">
+      <ion-label>班组编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="班组编号" text-right   #shiftNo></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>物料数量：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="物料数量" text-right   #materQty></ion-input>
+    </ion-item>      
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="PalletButton">
+      <button ion-button mode="ios" color="reds" outline="false" ion-icon name="home" 
+      style="width:48%;text-align:center" 
+      (click)="letEmpty(palletNo,lineNo,rackNo,shiftNo,materQty)">清空</button>
+      <button ion-button icon-start style="width:48%;text-align:center" 
+      (click)="bounding(palletNo,lineNo,rackNo,shiftNo,materQty)">绑定</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

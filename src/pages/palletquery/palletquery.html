@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>托盘查询</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <ion-item>
+      <label>托盘编号：</label>
+      <input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="  请扫描托盘编号" (keyup.enter)="focusInputp(palletNo)"
+        #palletNo/>
+    </ion-item>
+  </div>
+  <div class="pallet">
+    <table width="100%" border="1" cellpadding="2" align="center">
+      <thead>
+        <tr>
+          <th width="100" colspan="2">托盘信息</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <tr>
+          <th>绑定立库：</th>
+          <td>{{store}}</td>
+        </tr>
+        <tr>
+          <th>绑定物料：</th>
+          <td>{{material}}</td>
+        </tr>
+        <tr>
+          <th>产品重量：</th>
+          <td>{{proweight}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="buttonsCSS">
+      <button ion-button color="reds" style="width:100%" (click)="emptypallet(palletNo)">清空</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

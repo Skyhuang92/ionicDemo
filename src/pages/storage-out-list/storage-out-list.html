@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>库位出库</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+  <div class="firstDiv">
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label align="center" color="storageOut" floating>排</ion-label>
+          <ion-input type="number" #rowLine></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label align="center" color="storageOut" floating>列</ion-label>
+          <ion-input type="number" #colLine></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label align="center" color="storageOut" floating>层</ion-label>
+          <ion-input type="number" #floorLine></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+  </div>
+  <div class="secondDiv">
+    <ion-item>
+      <ion-label>库位号：</ion-label>
+      <ion-input clearInput="true" type="number" placeholder="请输入库位编号" #binNo></ion-input>
+    </ion-item>
+  </div>
+  <div class="thirdDiv">
+    <table width="100%" border="1" cellpadding="2" align="center">
+      <thead>
+        <tr>
+          <th width="100" colspan="2">任务信息</th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <tr>
+          <th>任务号：</th>
+          <td>{{taskNo}}</td>
+        </tr>
+        <tr>
+          <th>库位号：</th>
+          <td>{{bin_No}}</td>
+        </tr>
+        <tr>
+          <th>托盘号：</th>
+          <td>{{palletNo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="fourthDiv">
+      <button ion-button style="width:48%;float:left;text-align:center" color="reds" (click)="clearButtonClick(rowLine,colLine,floorLine,binNo)">
+        清空
+      </button>
+      <button ion-button style="width:48%;float:left;text-align:center" icon-start (click)="storageOutButtonClick(rowLine,colLine,floorLine,binNo)">
+        出库
+      </button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,38 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>扫码发货</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+  <div class="firstDiv">
+    <ion-item no-border>
+      <label>产品条码：</label>
+      <input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="  请输入轮胎条码"  #barcode/>
+
+    </ion-item>
+    <ion-item>
+      <label>托盘编号：</label>
+      <input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="  请输入托盘编号" #palletNo/>
+    </ion-item>
+
+  </div>
+  <div class="secondDiv">
+    <ion-item>
+      <ion-label>发货数量：{{sendNumber}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>发货物料：{{sendMaterial}}</ion-label>
+    </ion-item>                                          
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="thirdDiv">
+      <button ion-button mode="ios" color="reds" style="width:47%;padding:0;float:left;text-align:center" (click)="letEmpty(barcode,palletNo)">清空</button>
+      <button ion-button mode="ios" style="width:47%;padding:0;float:left;text-align:center" (click)="sendGoods(palletNo,barcode)">发货</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>

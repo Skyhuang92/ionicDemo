@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style='text-align:center'>
+      更多
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-color">
+  <ion-list class="top-list">
+    <button ion-item>
+      <ion-avatar item-left>
+        <img src="./assets/icon/user.jpg">
+      </ion-avatar>
+      <h2>{{userInfo.userNamePar}}</h2>
+      <p>账号：{{userInfo.userNamePar}}</p>
+    </button>
+  </ion-list>
+  <ion-list>
+    <button ion-item (click)="checkUpdate()">
+      检查更新
+      <span item-end>V{{currentVersion}}</span>
+    </button>
+    <button ion-item (click)="aboutUs()">
+      关于我们
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar style="width:100%">
+      <div class="buttonsCSS">
+        <button ion-button color="reds" style="width:100%" (click)="logOut()">退出当前用户</button>
+      </div>
+    </ion-toolbar>
+  </ion-footer>

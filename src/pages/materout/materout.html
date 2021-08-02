@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>余料回库</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="MaterBack">  
+    <ion-item>
+      <ion-label>回库工位：</ion-label>    
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="工位编号录入" text-right #locNo></ion-input>
+    </ion-item>   
+    <ion-item>
+      <ion-label>托盘编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="托盘编号录入" text-right #palletNo></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>物料编号：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="物料编号录入" text-right #materNo></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>物料数量：</ion-label>
+      <ion-input style="background:transparent;border:1px solid #ffffff" type="text" placeholder="物料数量录入" text-right  #materQty></ion-input>
+    </ion-item>
+  </div>
+</ion-content>   
+
+<ion-footer>
+  <ion-toolbar style="width:100%">
+    <div class="fourthDiv">
+      <button ion-button mode="ios" color="reds" outline="false" ion-icon name="home" 
+      style="width:48%;text-align:center" 
+      (click)="letEmpty(locNo,palletNo,materNo,materQty)">清空</button>
+      <button ion-button icon-start style="width:48%;text-align:center" 
+      (click)="materBack(locNo,palletNo,materNo,materQty)">回库</button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
